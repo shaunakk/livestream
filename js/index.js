@@ -13,6 +13,10 @@
  var json
  $(document).ready(
      function() {
+         $(".restart").click(
+             function() {
+                 location.reload()
+             })
 
          if (localStorage.getItem("ip")) {
 
@@ -38,6 +42,12 @@
              }
          });
          $(".nav li:eq(3)").click(function() {
+            if (localStorage.ip) {
+                 setTimeout(function() {
+                     $(".sweet-alert fieldset input").prop("value", localStorage.ip)
+                 }, 100)
+             }
+
              swal({
                  title: "Server IP",
                  text: "The IP of your server:",
@@ -60,6 +70,12 @@
              });
          });
          $(".nav li:eq(4)").click(function() {
+             if (localStorage.ports) {
+                 setTimeout(function() {
+                     $(".sweet-alert fieldset input").prop("value", localStorage.ports)
+                 }, 100)
+             }
+
              swal({
                  title: "Server Port",
                  text: "The port you are using (no colon):",
@@ -68,6 +84,7 @@
                  closeOnConfirm: false,
                  animation: "slide-from-top",
              }, function(inputValue) {
+
                  if (inputValue === false) return false;
                  if (inputValue === "") {
                      swal.showInputError("You need to write something!");
@@ -75,9 +92,16 @@
                  }
                  swal("Success!", "Server Port: " + inputValue, "success");
                  localStorage.ports = inputValue
+
              });
          });
          $(".nav li:eq(5)").click(function() {
+            if (localStorage.cip) {
+                 setTimeout(function() {
+                     $(".sweet-alert fieldset input").prop("value", localStorage.cip)
+                 }, 100)
+             }
+
              swal({
                  title: "Computer IP",
                  text: "The IP of your computer:",
@@ -100,6 +124,12 @@
              });
          });
          $(".nav li:eq(6)").click(function() {
+            if (localStorage.cports) {
+                 setTimeout(function() {
+                     $(".sweet-alert fieldset input").prop("value", localStorage.cports)
+                 }, 100)
+             }
+
              swal({
                  title: "Computer Port",
                  text: "The port you are using (no colon):",

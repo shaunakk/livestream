@@ -16,14 +16,13 @@ display: inline;
 text-align: center;
 }
 html {
-background: url("") no-repeat center 100% 100% 0px 0px center fixed;
+background: url("192.168.1.161:9601") no-repeat center fixed !important;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
 background-attachment: fixed;
 background-position:0px,0px;
-height: 100% !important;
 }
 .settings{
    position:absolute !important;
@@ -36,7 +35,7 @@ body {
     overflow -y: hidden;
 }
 body,
-html { height: 100%;}
+
 .nav .open > a, 
 .nav .open > a:hover, 
 .nav .open > a:focus {background-color: transparent;}

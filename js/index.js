@@ -22,10 +22,7 @@
 
          } else {
              start()
-         }
-         $("html").css({
-             'background-size': ''
-         });
+         } 
          getAjaxReq()
          sidemenu()
          $(".checkbox").change(function() {
@@ -310,9 +307,10 @@
      console.log('Image URL: ' + profile.getImageUrl());
      console.log('Email: ' + profile.getEmail());
      var auth2 = gapi.auth2.getAuthInstance();
-     setInterval(function() {
-         $('html').css("background", "url('http://" + localStorage.cip + ":" + localStorage.cports + "?" + new Date().getTime() + "&email=" + profile.getEmail() + "')  100% 100% no-repeat center center fixed")
-     }, 1000)
+
+         //$('html').css("background", "url('http://" + localStorage.cip + ":" + localStorage.cports + "?"+"email=" + profile.getEmail() + "')  100% 100% no-repeat center center fixed")
+         alert("url('http://" + localStorage.cip + ":" + localStorage.cports + "?"+"email=" + profile.getEmail() + "')")
+   
 
      // auth2.signOut().then(function() {
      //     console.log('User signed out.');
